@@ -29,14 +29,14 @@ let comments = [
   }
 ];
 
-let data={
+var data={
   list:comments
 };
 
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('index.html',{
+  res.render('../public/views/index.html',{
     title:'首页',
     list:data
   });

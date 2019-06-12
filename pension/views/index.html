@@ -5,7 +5,6 @@
 
 {{extend './layout.html'}}
 {{block 'title'}}{{title}}{{/block}}
-
 <!-- 样式表文件 -->
 {{block 'head'}}
     <link rel="stylesheet" href="css/index.css" type="text/css">
@@ -14,11 +13,11 @@
 <!-- 主要内容区域 -->
 {{block 'content'}}
 <div class="nav" id="navList"></div>
-
+<button id='login'>登录</button>
 <!-- js文件 -->
 <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
 <script src="https://cdn.bootcss.com/vue/2.6.10/vue.js"></script>
-<script src="js/home/index.min.js"></script>
+<script src="index.js"></script>
 <script>
 
 </script>
