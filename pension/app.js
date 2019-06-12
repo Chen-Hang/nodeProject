@@ -5,11 +5,9 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 const template=require('express-art-template');
 
-
-
+//导入路由文件
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
-
 var app = express();
 
 // view engine setup
@@ -24,6 +22,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+//路由跟踪
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 
