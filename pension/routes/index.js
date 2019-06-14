@@ -36,7 +36,7 @@ var data={
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-  res.render('../public/views/index.html',{
+  res.render('index.html',{
     title:'首页',
     list:data
   });

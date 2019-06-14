@@ -20,10 +20,11 @@ gulp.task('sass', function() {
         }).on('error', sass.logError))
         .pipe(prefix('last 2 versions', '> 1%', 'ie8', 'Android 2'))
         .pipe(sourcemaps.write())
-        // .pipe(rename({                      // Renames the merged CSS file
-        //     basename: 'style',              // The file name
-        //     extname: '.css'                 // The file extension
-        // }))
+        .pipe(rename({                      // Renames the merged CSS file
+            // basename: 'style',              // The file name
+            // extname: '.css'                 // The file extension
+            suffix: '.min' //rename只是给上一步骤产出的压缩的styles.css重命名为style.min.css
+        }))
         .pipe(gulp.dest('./public/css'))
         .pipe(reload({
             stream: true
@@ -80,8 +81,6 @@ gulp.task('browser-sync', ['nodemon', 'sass','convertJS','convertHTML'], functio
     });
     gulp.watch('sass/*.scss', ['sass-watch']);
 });
-
-
 
 gulp.task('dist', ['clean','convertHTML', 'convertJS','sass']);
 gulp.task('default', ['browser-sync']);
